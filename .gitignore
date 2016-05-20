@@ -8,7 +8,7 @@
 !var/sessions/.gitkeep
 /app/config/parameters.yml
 /web/assets/*
-/vendor/*
+/vendor/
 /bin/
 /composer.phar
 node_modules/
