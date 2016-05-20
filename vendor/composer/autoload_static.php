@@ -14,13 +14,10 @@ class ComposerStaticInit2df9325c40cbfe191c5806071cdacb12
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
+        'ce89ac35a6c330c55f4710717db9ff78' => __DIR__ . '/..' . '/kriswallsmith/assetic/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'T' => 
-        array (
-            'Tests\\' => 6,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
@@ -30,6 +27,7 @@ class ComposerStaticInit2df9325c40cbfe191c5806071cdacb12
             'Symfony\\Component\\' => 18,
             'Symfony\\Bundle\\SwiftmailerBundle\\' => 33,
             'Symfony\\Bundle\\MonologBundle\\' => 29,
+            'Symfony\\Bundle\\AsseticBundle\\' => 29,
             'Symfony\\Bundle\\' => 15,
             'Symfony\\Bridge\\Twig\\' => 20,
             'Symfony\\Bridge\\Swiftmailer\\' => 27,
@@ -37,6 +35,7 @@ class ComposerStaticInit2df9325c40cbfe191c5806071cdacb12
             'Symfony\\Bridge\\PhpUnit\\' => 23,
             'Symfony\\Bridge\\Monolog\\' => 23,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'Sihades\\Marvel\\' => 15,
             'Sensio\\Bundle\\GeneratorBundle\\' => 30,
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
@@ -60,10 +59,6 @@ class ComposerStaticInit2df9325c40cbfe191c5806071cdacb12
     );
 
     public static $prefixDirsPsr4 = array (
-        'Tests\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/tests',
-        ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-util',
@@ -92,6 +87,10 @@ class ComposerStaticInit2df9325c40cbfe191c5806071cdacb12
         array (
             0 => __DIR__ . '/..' . '/symfony/monolog-bundle',
         ),
+        'Symfony\\Bundle\\AsseticBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/assetic-bundle',
+        ),
         'Symfony\\Bundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Bundle',
@@ -119,6 +118,10 @@ class ComposerStaticInit2df9325c40cbfe191c5806071cdacb12
         'Symfony\\Bridge\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Bridge/Doctrine',
+        ),
+        'Sihades\\Marvel\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Sensio\\Bundle\\GeneratorBundle\\' => 
         array (
@@ -160,10 +163,6 @@ class ComposerStaticInit2df9325c40cbfe191c5806071cdacb12
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle',
         ),
-    );
-
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/../..' . '/src',
     );
 
     public static $prefixesPsr0 = array (
@@ -215,6 +214,13 @@ class ComposerStaticInit2df9325c40cbfe191c5806071cdacb12
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
             ),
         ),
+        'A' => 
+        array (
+            'Assetic' => 
+            array (
+                0 => __DIR__ . '/..' . '/kriswallsmith/assetic/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -238,7 +244,6 @@ class ComposerStaticInit2df9325c40cbfe191c5806071cdacb12
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit2df9325c40cbfe191c5806071cdacb12::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit2df9325c40cbfe191c5806071cdacb12::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit2df9325c40cbfe191c5806071cdacb12::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit2df9325c40cbfe191c5806071cdacb12::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit2df9325c40cbfe191c5806071cdacb12::$classMap;
 
