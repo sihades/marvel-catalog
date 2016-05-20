@@ -1,6 +1,0 @@
-[2016-05-18 23:56:43] php.DEBUG: unlink(web/bundles/framework): No such file or directory {"type":2,"file":"C:\\wamp64\\www\\symfony\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Filesystem\\Filesystem.php","line":178,"level":28928} []
-[2016-05-18 23:56:43] php.DEBUG: symlink(): Could not fetch file information(error 3) {"type":2,"file":"C:\\wamp64\\www\\symfony\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Filesystem\\Filesystem.php","line":332,"level":28928} []
-[2016-05-18 23:56:43] php.DEBUG: symlink(): Cannot create symlink, error code(1314) {"type":2,"file":"C:\\wamp64\\www\\symfony\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Filesystem\\Filesystem.php","line":332,"level":28928} []
-[2016-05-19 00:03:03] request.INFO: Matched route "homepage". {"route_parameters":{"_controller":"AppBundle\\Controller\\DefaultController::indexAction","_route":"homepage"},"request_uri":"http://marvel-catalog.sih/app_dev.php/"} []
-[2016-05-19 00:03:04] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
-[2016-05-19 00:03:05] request.INFO: Matched route "_wdt". {"route_parameters":{"_controller":"web_profiler.controller.profiler:toolbarAction","token":"a3d533","_route":"_wdt"},"request_uri":"http://marvel-catalog.sih/app_dev.php/_wdt/a3d533"} []

@@ -1,0 +1,14 @@
+{
+  "scripts": [
+    "./bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js",
+    "./app/Resources/assets/js/"
+  ],
+  "sass": [
+    "./bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss",
+    "./app/Resources/assets/sass/*"
+  ],
+  "dir": {
+    "styles": "./web/assets/styles",
+    "scripts": "./web/assets/scripts"
+  }
+}
