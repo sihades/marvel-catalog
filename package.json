@@ -1,0 +1,26 @@
+{
+  "name": "marvel-catalog",
+  "version": "1.0.0",
+  "description": "Web application to show a marvel catalog of comics and characters using Marvel API.",
+  "main": "gulpfile.js",
+  "license": "GNU",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sihades/marvel-catalog.git"
+  },
+  "author": "Sihades <ivanra10@gmail.com",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.2.0"
+  }
+}
