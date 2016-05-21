@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+# To execute: bin/php-cs-fixer <directory>
+
+if [ -f vendor/fabpot/php-cs-fixer/php-cs-fixer ]
+then
+  echo "Executing from vendor/fabpot/php-cs-fixer/ ..."
+  vendor/fabpot/php-cs-fixer/php-cs-fixer fix $1
+elif type php-cs-fixer > /dev/null
+then
+  echo "Executing from bash ..."
+  php-cs-fixer fix $1
+else
+  echo "php-cs-fixer not installed."
+fi
