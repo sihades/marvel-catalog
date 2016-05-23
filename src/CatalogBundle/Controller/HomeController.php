@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route("/", service="catalog.home.controller")
+ * @Route("/", service="marvel.home.controller")
  */
 class HomeController extends Controller
 {
@@ -18,7 +18,6 @@ class HomeController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
         return [];
     }
 }
