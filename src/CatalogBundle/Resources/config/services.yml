@@ -1,0 +1,29 @@
+services:
+
+    # Controllers
+
+    marvel.home.controller:
+        class: Sihades\Marvel\CatalogBundle\Controller\HomeController
+
+    marvel.characters.controller:
+        class: Sihades\Marvel\CatalogBundle\Controller\CharactersController
+        calls:
+            - [ setRequest, ['@marvel.characters.request']]
+
+    # Requests
+
+    marvel.abstract.request:
+        class: Sihades\Marvel\CatalogBundle\Request\AbstractRequest
+
+    marvel.characters.request:
+        class: Sihades\Marvel\CatalogBundle\Request\CharactersRequest
+        calls:
+           - [ setPrivateKey, ['%marvel.private_key%']]
+           - [ setPublicKey, ['%marvel.public_key%']]
+           - [ setClient, ['@marvel.client.request']]
+           - [ setEndpoint, ['%marvel.endpoints.characters%']]
+
+    marvel.client.request:
+        class: GuzzleHttp\Client
+        arguments:
+            - base_uri: '%marvel.base_url%'

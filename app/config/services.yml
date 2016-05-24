@@ -1,6 +1,1 @@
 services:
-
-  # Controllers
-
-  catalog.home.controller:
-    class: Sihades\Marvel\CatalogBundle\Controller\HomeController

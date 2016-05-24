@@ -1,0 +1,5 @@
+parameters:
+    marvel.base_url: 'http://gateway.marvel.com/v1/public/'
+    marvel.private_key: ''
+    marvel.public_key: ''
+    marvel.endpoints.characters: 'characters'

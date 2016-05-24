@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="test-class">Marvel Catalog - Characters</h1>
+    <ul>
+        {% for character in characters %}
+            <li>
+                <img width="63" height="50" title="{{ character.name }}" src="{{ character.thumbnail['path'] }}.{{ character.thumbnail['extension'] }}" />
+                {{ character.id }} - {{ character.name }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
