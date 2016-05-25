@@ -20,10 +20,11 @@ services:
         calls:
            - [ setPrivateKey, ['%marvel.private_key%']]
            - [ setPublicKey, ['%marvel.public_key%']]
-           - [ setClient, ['@marvel.client.request']]
+           - [ setHandler, ['@marvel.cache_request.handler']]
            - [ setEndpoint, ['%marvel.endpoints.characters%']]
 
-    marvel.client.request:
-        class: GuzzleHttp\Client
-        arguments:
-            - base_uri: '%marvel.base_url%'
+    # Handler
+
+    marvel.cache_request.handler:
+        class: Sihades\Marvel\CatalogBundle\Handler\CacheRequestHandler
+        arguments: ['%marvel.base_url%', '%marvel.cache_dir%']

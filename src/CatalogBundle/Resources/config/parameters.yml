@@ -1,4 +1,5 @@
 parameters:
+    marvel.cache_dir: '%kernel.root_dir%/../var/cache/handler/'
     marvel.base_url: 'http://gateway.marvel.com/v1/public/'
     marvel.private_key: ''
     marvel.public_key: ''

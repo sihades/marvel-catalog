@@ -2,7 +2,7 @@
 
 namespace Sihades\Marvel\CatalogBundle\Request;
 
-use GuzzleHttp\Client;
+use Sihades\Marvel\CatalogBundle\Handler\CacheRequestHandler;
 
 /**
  * Class AbstractRequest.
@@ -20,9 +20,9 @@ abstract class AbstractRequest
     private $publicKey;
 
     /**
-     * @GuzzleHttp\Client
+     * @Sihades\Marvel\CatalogBundle\Handler\CacheRequestHandler
      */
-    private $client;
+    private $handler;
 
     /**
      * @string
@@ -41,7 +41,7 @@ abstract class AbstractRequest
         $timestamp = time();
         $hash = md5($timestamp.$this->privateKey.$this->publicKey);
 
-        return $this->client->get($this->endpoint.$action.
+        return $this->handler->getClient()->get($this->endpoint.$action.
             '?offset='.$offset.
             '&limit='.$limit.
             '&ts='.$timestamp.
@@ -67,11 +67,11 @@ abstract class AbstractRequest
     }
 
     /**
-     * @param Client $client
+     * @param CacheRequestHandler $handler
      */
-    public function setClient(Client $client)
+    public function setHandler(CacheRequestHandler $handler)
     {
-        $this->client = $client;
+        $this->handler = $handler;
     }
 
     /**

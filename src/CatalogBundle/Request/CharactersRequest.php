@@ -7,6 +7,11 @@ namespace Sihades\Marvel\CatalogBundle\Request;
  */
 class CharactersRequest extends AbstractRequest
 {
+    /**
+     * @param string $action
+     *
+     * @return array
+     */
     public function send($action = '')
     {
         $response = $this->request($action, 0, 20);
