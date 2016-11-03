@@ -8,22 +8,21 @@ services:
     marvel.characters.controller:
         class: Sihades\Marvel\CatalogBundle\Controller\CharactersController
         calls:
-            - [ setRequest, ['@marvel.characters.request']]
+            - [ setMarvelRequest, ['@marvel.request']]
+            - [ setEndpoint, ['%marvel.endpoints.characters%']]
+            - [ setPaginatorLimit, ['%paginator.limit%']]
 
     # Requests
 
-    marvel.abstract.request:
-        class: Sihades\Marvel\CatalogBundle\Request\AbstractRequest
-
-    marvel.characters.request:
-        class: Sihades\Marvel\CatalogBundle\Request\CharactersRequest
+    marvel.request:
+        class: Sihades\Marvel\CatalogBundle\Request\MarvelRequest
         calls:
-           - [ setPrivateKey, ['%marvel.private_key%']]
-           - [ setPublicKey, ['%marvel.public_key%']]
-           - [ setClient, ['@marvel.client.request']]
-           - [ setEndpoint, ['%marvel.endpoints.characters%']]
+            - [ setPrivateKey, ['%marvel.private_key%']]
+            - [ setPublicKey, ['%marvel.public_key%']]
+            - [ setHandler, ['@marvel.cache_request.handler']]
 
-    marvel.client.request:
-        class: GuzzleHttp\Client
-        arguments:
-            - base_uri: '%marvel.base_url%'
+    # Handler
+
+    marvel.cache_request.handler:
+        class: Sihades\Marvel\CatalogBundle\Handler\CacheRequestHandler
+        arguments: ['%marvel.base_url%', '%marvel.cache_dir%']

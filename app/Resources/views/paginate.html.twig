@@ -1,0 +1,11 @@
+<ul>
+    <li><a href ="/{{ endpoint }}/">&lt;&lt; First &gt;&gt;</a></li>
+
+    {% for pageList in paginator.getPagesList() %}
+    <li>
+        <a href ="/{{ endpoint }}/?page={{ pageList }}">&lt;&lt; {{ pageList }} &gt;&gt;</a>
+    </li>
+    {% endfor %}
+
+    <li><a href ="/{{ endpoint }}/?page={{ paginator.getTotalPages() }}">&lt;&lt; Last &gt;&gt;</a></li>
+</ul>
