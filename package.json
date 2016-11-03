@@ -11,15 +11,20 @@
   },
   "author": "Sihades <ivanra10@gmail.com",
   "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
     "bower": "^1.7.9",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-sass": "^2.3.1",
     "gulp-uglify": "^1.5.3",
     "gulp-watch": "^4.3.5",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.0"
   }

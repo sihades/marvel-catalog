@@ -1,7 +1,11 @@
 {
     "scripts": [
+        "./bower_components/jquery/dist/jquery.min.js",
         "./bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js",
-        "./app/Resources/assets/js/"
+        "./node_modules/react/dist/react.min.js",
+        "./node_modules/react-dom/dist/react-dom.min.js",
+        "./app/Resources/assets/jsx/characters.jsx",
+        "./app/Resources/assets/jsx/init.jsx"
     ],
     "sass": [
         "./bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss",
