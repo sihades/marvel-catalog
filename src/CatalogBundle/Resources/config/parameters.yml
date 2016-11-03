@@ -1,6 +1,7 @@
 parameters:
+    paginator.limit: '20'
     marvel.cache_dir: '%kernel.root_dir%/../var/cache/handler/'
     marvel.base_url: 'http://gateway.marvel.com/v1/public/'
-    marvel.private_key: ''
-    marvel.public_key: ''
+    marvel.private_key: '233b7bb284a6d716907bdc8f4e6bb9a5ca38cf0c'
+    marvel.public_key: '78d8348193ddc975b6fdf22dca34971e'
     marvel.endpoints.characters: 'characters'

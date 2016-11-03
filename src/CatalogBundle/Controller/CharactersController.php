@@ -6,7 +6,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Sihades\Marvel\CatalogBundle\Request\CharactersRequest;
+use Sihades\Marvel\CatalogBundle\Request\MarvelRequest;
+use Sihades\Marvel\CatalogBundle\Lib\Paginator;
 
 /**
  * @Route("/characters", service="marvel.characters.controller")
@@ -14,9 +15,19 @@ use Sihades\Marvel\CatalogBundle\Request\CharactersRequest;
 class CharactersController extends Controller
 {
     /**
-     * @CharactersRequest
+     * @string
      */
-    protected $request;
+    protected $endpoint;
+
+    /**
+     * @var MarvelRequest
+     */
+    protected $marvelRequest;
+
+    /**
+     * @var int
+     */
+    protected $paginatorLimit;
 
     /**
      * @Route("/", name="characters")
@@ -24,18 +35,37 @@ class CharactersController extends Controller
      */
     public function charactersAction(Request $request)
     {
-        $charactersData = $this->request->send();
+        $page = $request->query->getInt('page', 1);
+        $charactersData = $this->marvelRequest->send($this->endpoint, $page, $this->paginatorLimit);
 
         return [
-            'characters' => $charactersData,
+            'characters' => $charactersData['results'],
+            'paginator' => new Paginator($page, $charactersData['total'], $this->paginatorLimit),
+            'endpoint' => $this->endpoint,
         ];
     }
 
     /**
-     * @param CharactersRequest $request
+     * @param string $endpoint
      */
-    public function setRequest(CharactersRequest $request)
+    public function setEndpoint($endpoint)
     {
-        $this->request = $request;
+        $this->endpoint = $endpoint;
+    }
+
+    /**
+     * @param MarvelRequest $marvelRequest
+     */
+    public function setMarvelRequest(MarvelRequest $marvelRequest)
+    {
+        $this->marvelRequest = $marvelRequest;
+    }
+
+    /**
+     * @param int $paginatorLimit
+     */
+    public function setPaginatorLimit(int $paginatorLimit)
+    {
+        $this->paginatorLimit = $paginatorLimit;
     }
 }

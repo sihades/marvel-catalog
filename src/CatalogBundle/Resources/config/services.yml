@@ -8,20 +8,18 @@ services:
     marvel.characters.controller:
         class: Sihades\Marvel\CatalogBundle\Controller\CharactersController
         calls:
-            - [ setRequest, ['@marvel.characters.request']]
+            - [ setMarvelRequest, ['@marvel.request']]
+            - [ setEndpoint, ['%marvel.endpoints.characters%']]
+            - [ setPaginatorLimit, ['%paginator.limit%']]
 
     # Requests
 
-    marvel.abstract.request:
-        class: Sihades\Marvel\CatalogBundle\Request\AbstractRequest
-
-    marvel.characters.request:
-        class: Sihades\Marvel\CatalogBundle\Request\CharactersRequest
+    marvel.request:
+        class: Sihades\Marvel\CatalogBundle\Request\MarvelRequest
         calls:
-           - [ setPrivateKey, ['%marvel.private_key%']]
-           - [ setPublicKey, ['%marvel.public_key%']]
-           - [ setHandler, ['@marvel.cache_request.handler']]
-           - [ setEndpoint, ['%marvel.endpoints.characters%']]
+            - [ setPrivateKey, ['%marvel.private_key%']]
+            - [ setPublicKey, ['%marvel.public_key%']]
+            - [ setHandler, ['@marvel.cache_request.handler']]
 
     # Handler
 

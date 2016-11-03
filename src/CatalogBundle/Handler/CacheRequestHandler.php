@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Sihades\Marvel\CatalogBundle\Handler;
 
 use GuzzleHttp\Client;
@@ -19,8 +21,8 @@ class CacheRequestHandler
     /**
      * CacheRequestHandler constructor.
      *
-     * @param $baseUri
-     * @param $cacheDir
+     * @param string $baseUri
+     * @param string $cacheDir
      */
     public function __construct($baseUri, $cacheDir)
     {
@@ -41,7 +43,7 @@ class CacheRequestHandler
     /**
      * @return Client
      */
-    public function getClient()
+    public function getClient(): Client
     {
         return $this->client;
     }
