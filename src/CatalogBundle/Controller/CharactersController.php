@@ -39,7 +39,7 @@ class CharactersController extends Controller
         $charactersData = $this->marvelRequest->send($this->endpoint, $page, $this->paginatorLimit);
 
         return [
-            'characters' => $charactersData['results'],
+            'characters' => json_encode($charactersData['results']),
             'paginator' => new Paginator($page, $charactersData['total'], $this->paginatorLimit),
             'endpoint' => $this->endpoint,
         ];

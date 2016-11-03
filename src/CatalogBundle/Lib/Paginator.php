@@ -55,7 +55,7 @@ class Paginator
      */
     protected function setItemsInPage($itemsInPage)
     {
-        $this->itemsInPage = ($itemsInPage > 0) ?: self::DEFAULT_ITEMS_IN_PAGE;
+        $this->itemsInPage = ($itemsInPage > 0) ? $itemsInPage : self::DEFAULT_ITEMS_IN_PAGE;
     }
 
     /**

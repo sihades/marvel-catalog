@@ -1,17 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section id="characters">
-
-    </section>
-    <ul>
-        {% for character in characters %}
-            <li>
-                <img width="63" height="50" title="{{ character.name }}" src="{{ character.thumbnail['path'] }}.{{ character.thumbnail['extension'] }}" />
-                {{ character.id }} - {{ character.name }}
-            </li>
-        {% endfor %}
-    </ul>
+    <hidden id="characters-data" value='{{ characters }}'></hidden>
+    <section id="characters"></section>
 
     {{ include('paginate.html.twig') }}
 {% endblock %}
